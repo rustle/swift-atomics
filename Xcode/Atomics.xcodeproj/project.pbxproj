@@ -36,6 +36,15 @@
 		03DB46FD1B4C7AFC00F4B44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DB46FC1B4C7AFC00F4B44B /* Assets.xcassets */; };
 		03DB47001B4C7AFC00F4B44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB46FE1B4C7AFC00F4B44B /* LaunchScreen.storyboard */; };
 		03E976511DFB1E9600F4B44B /* AtomicsRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E976501DFB1E9600F4B44B /* AtomicsRaceTests.swift */; };
+		9110A86120D7393F0040E749 /* atomics-integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D7C451ECF61A800F4B44B /* atomics-integer.swift */; };
+		9110A86220D7393F0040E749 /* CAtomics.c in Sources */ = {isa = PBXBuildFile; fileRef = 03D6A82B1DF20AAB00F4B44B /* CAtomics.c */; };
+		9110A86320D7393F0040E749 /* atomics-pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6A8341DF20AF700F4B44B /* atomics-pointer.swift */; };
+		9110A86420D7393F0040E749 /* atomics-fence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03157DAA1E4C4C6D00F4B44B /* atomics-fence.swift */; };
+		9110A86520D7393F0040E749 /* atomics-reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03433D931EC2150200F4B44B /* atomics-reference.swift */; };
+		9110A86820D7393F0040E749 /* CAtomics.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D6A82C1DF20AAB00F4B44B /* CAtomics.h */; };
+		9110A86A20D7393F0040E749 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 03CF24BE1F39870D00F4B44B /* .travis.yml */; };
+		9110A86B20D7393F0040E749 /* atomics-pointer.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = 030F599E1ED04A4600F4B44B /* atomics-pointer.swift.gyb */; };
+		9110A86C20D7393F0040E749 /* generate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 030F59A31ED1AB7700F4B44B /* generate.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +121,7 @@
 		03DB470C1B4C7AFC00F4B44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E4BEEB1BFD994D00F4B44B /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		03E976501DFB1E9600F4B44B /* AtomicsRaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AtomicsRaceTests.swift; path = ../../Tests/AtomicsTests/AtomicsRaceTests.swift; sourceTree = "<group>"; };
+		9110A87020D7393F0040E749 /* Atomics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Atomics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9110A86620D7393F0040E749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -169,6 +186,7 @@
 				030110F91B4B896700F4B44B /* AtomicsTests.xctest */,
 				03DB46F31B4C7AFB00F4B44B /* Atomics_TestApp.app */,
 				03DB47061B4C7AFC00F4B44B /* Atomics_TestAppTests.xctest */,
+				9110A87020D7393F0040E749 /* Atomics.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,12 +267,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9110A86720D7393F0040E749 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9110A86820D7393F0040E749 /* CAtomics.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		030110EE1B4B896700F4B44B /* Atomics */ = {
+		030110EE1B4B896700F4B44B /* Atomics iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 030111031B4B896700F4B44B /* Build configuration list for PBXNativeTarget "Atomics" */;
+			buildConfigurationList = 030111031B4B896700F4B44B /* Build configuration list for PBXNativeTarget "Atomics iOS" */;
 			buildPhases = (
 				030F599D1ECF80B600F4B44B /* ShellScript */,
 				030110EA1B4B896700F4B44B /* Sources */,
@@ -266,7 +292,7 @@
 			);
 			dependencies = (
 			);
-			name = Atomics;
+			name = "Atomics iOS";
 			productName = Atomics;
 			productReference = 030110EF1B4B896700F4B44B /* Atomics.framework */;
 			productType = "com.apple.product-type.framework";
@@ -328,6 +354,25 @@
 			productReference = 03DB47061B4C7AFC00F4B44B /* Atomics_TestAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9110A85E20D7393F0040E749 /* Atomics macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9110A86D20D7393F0040E749 /* Build configuration list for PBXNativeTarget "Atomics macOS" */;
+			buildPhases = (
+				9110A85F20D7393F0040E749 /* ShellScript */,
+				9110A86020D7393F0040E749 /* Sources */,
+				9110A86620D7393F0040E749 /* Frameworks */,
+				9110A86720D7393F0040E749 /* Headers */,
+				9110A86920D7393F0040E749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Atomics macOS";
+			productName = Atomics;
+			productReference = 9110A87020D7393F0040E749 /* Atomics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -372,7 +417,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				030110EE1B4B896700F4B44B /* Atomics */,
+				030110EE1B4B896700F4B44B /* Atomics iOS */,
+				9110A85E20D7393F0040E749 /* Atomics macOS */,
 				030110F81B4B896700F4B44B /* AtomicsTests */,
 				03DB46F21B4C7AFB00F4B44B /* Atomics_TestApp */,
 				03DB47051B4C7AFC00F4B44B /* Atomics_TestAppTests */,
@@ -412,6 +458,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9110A86920D7393F0040E749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9110A86A20D7393F0040E749 /* .travis.yml in Resources */,
+				9110A86B20D7393F0040E749 /* atomics-pointer.swift.gyb in Resources */,
+				9110A86C20D7393F0040E749 /* generate.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +514,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "set -e\n/bin/bash ${PROJECT_DIR}/../Utilities/generate-linuxmain.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		9110A85F20D7393F0040E749 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -e\n/bin/bash ${PROJECT_DIR}/../Utilities/generate.sh";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -510,17 +580,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9110A86020D7393F0040E749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9110A86120D7393F0040E749 /* atomics-integer.swift in Sources */,
+				9110A86220D7393F0040E749 /* CAtomics.c in Sources */,
+				9110A86320D7393F0040E749 /* atomics-pointer.swift in Sources */,
+				9110A86420D7393F0040E749 /* atomics-fence.swift in Sources */,
+				9110A86520D7393F0040E749 /* atomics-reference.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		030110FC1B4B896700F4B44B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 030110EE1B4B896700F4B44B /* Atomics */;
+			target = 030110EE1B4B896700F4B44B /* Atomics iOS */;
 			targetProxy = 030110FB1B4B896700F4B44B /* PBXContainerItemProxy */;
 		};
 		0367F81D1E70E0BA00F4B44B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 030110EE1B4B896700F4B44B /* Atomics */;
+			target = 030110EE1B4B896700F4B44B /* Atomics iOS */;
 			targetProxy = 0367F81C1E70E0BA00F4B44B /* PBXContainerItemProxy */;
 		};
 		03DB47081B4C7AFC00F4B44B /* PBXTargetDependency */ = {
@@ -677,11 +759,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tffenterprises.Atomics;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Atomics;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphoneos appletvos iphonesimulator appletvsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos appletvos iphonesimulator appletvsimulator";
 				SWIFT_INCLUDE_PATHS = $SRCROOT/Atomics;
-				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -699,11 +781,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tffenterprises.Atomics;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Atomics;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphoneos appletvos iphonesimulator appletvsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos appletvos iphonesimulator appletvsimulator";
 				SWIFT_INCLUDE_PATHS = $SRCROOT/Atomics;
-				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -803,6 +885,50 @@
 			};
 			name = Release;
 		};
+		9110A86E20D7393F0040E749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Atomics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tffenterprises.Atomics;
+				PRODUCT_NAME = Atomics;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_INCLUDE_PATHS = $SRCROOT/Atomics;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		9110A86F20D7393F0040E749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Atomics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tffenterprises.Atomics;
+				PRODUCT_NAME = Atomics;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_INCLUDE_PATHS = $SRCROOT/Atomics;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -815,7 +941,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		030111031B4B896700F4B44B /* Build configuration list for PBXNativeTarget "Atomics" */ = {
+		030111031B4B896700F4B44B /* Build configuration list for PBXNativeTarget "Atomics iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				030111041B4B896700F4B44B /* Debug */,
@@ -847,6 +973,15 @@
 			buildConfigurations = (
 				03DB47111B4C7AFC00F4B44B /* Debug */,
 				03DB47121B4C7AFC00F4B44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9110A86D20D7393F0040E749 /* Build configuration list for PBXNativeTarget "Atomics macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9110A86E20D7393F0040E749 /* Debug */,
+				9110A86F20D7393F0040E749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

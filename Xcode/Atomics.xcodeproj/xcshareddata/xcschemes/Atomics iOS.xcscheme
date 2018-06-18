@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "030110EE1B4B896700F4B44B"
                BuildableName = "Atomics.framework"
-               BlueprintName = "Atomics"
+               BlueprintName = "Atomics iOS"
                ReferencedContainer = "container:Atomics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "030110EE1B4B896700F4B44B"
             BuildableName = "Atomics.framework"
-            BlueprintName = "Atomics"
+            BlueprintName = "Atomics iOS"
             ReferencedContainer = "container:Atomics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,7 +69,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "030110EE1B4B896700F4B44B"
             BuildableName = "Atomics.framework"
-            BlueprintName = "Atomics"
+            BlueprintName = "Atomics iOS"
             ReferencedContainer = "container:Atomics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -87,7 +87,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "030110EE1B4B896700F4B44B"
             BuildableName = "Atomics.framework"
-            BlueprintName = "Atomics"
+            BlueprintName = "Atomics iOS"
             ReferencedContainer = "container:Atomics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
